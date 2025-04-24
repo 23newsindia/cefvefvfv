@@ -1,7 +1,26 @@
-/* Add this to your carousel.css */
-.abc-carousel-inner {
-    touch-action: pan-y; /* Allows vertical scrolling but prevents horizontal */
+/* MAIN CAROUSEL CONTAINER */
+.abc-banner-carousel {
+    touch-action: pan-y; /* Add this to root element */
 }
+
+.abc-carousel-wrapper {
+    overflow: visible !important; /* Critical fix */
+    touch-action: pan-y; /* Add this */
+    padding: 0 15px;
+}
+
+.abc-carousel-inner {
+    touch-action: pan-y; /* Keep this */
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* Add this new class */
+.abc-carousel-inner.no-transition {
+    transition: none !important;
+}
+
+
+
 
 .abc-slide {
     /* Ensure slides can't be selected during swipe */
